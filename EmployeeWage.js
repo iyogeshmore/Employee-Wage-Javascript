@@ -62,4 +62,4 @@ function mapDayWithWage(dailyWage){
 }
 let mapDayWithWagearray = empDailyWageArray.map(mapDayWithWage);
 console.log("UC7B - Daily Wage Map ");
-console.log(mapDayWithWagearray)git checkout 
+console.log(mapDayWithWagearray)
