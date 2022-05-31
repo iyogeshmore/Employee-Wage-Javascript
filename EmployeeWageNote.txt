@@ -241,6 +241,7 @@ console.log("UC7A - Emp wage with reduce: " +empDailyWageArray.reduce(totalWages
 
 *********************************************************************************
 // UC7B - Show the Day along with Daily Wage using Array map helper function
+
 let dailyCntr = 0;
 function mapDayWithWage(dailyWage){
 dailyCntr++;
@@ -267,3 +268,28 @@ function findFulltimeWage(dailyWage){
     return dailyWage.includes("160");
 }
 console.log("UC7D - First time Fulltime Wage was earned on day: "+mapDayWithWagearray.find(findFulltimeWage));
+
+*********************************************************************************
+//UC7E - Check if Every Element of Full Time Wage is truly holding Full time wage
+
+function isAllFulltimeWage(dailyWage){
+return dailyWage.includes("160");
+}
+console.log("UC6E: Check All Elements have Full Time Wage: "+fullDayWageArray.every(isAllFulltimeWage));
+*********************************************************************************
+
+//UC7F - Check if there is any Part Time Wage
+
+function isAnyParttimeWage(dailyWage){
+return dailyWage.includes("80");
+}
+console.log("UC7F: Check If Any Part Time Wage: "+ mapDayWithWagearray.some(isAnyParttimeWage));
+*********************************************************************************
+
+//UC7G -  Find the number of days the Employee Worked
+
+function totalDaysWorked(numOfDays , dailyWage){
+if (dailyWage>0) return numOfDays+1;
+return numOfDays;
+}
+console.log("UC7G: Number of days Employee worked: "+ empDailyWageArray.reduce(totalDaysWorked,0));
