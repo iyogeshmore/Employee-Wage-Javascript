@@ -1,4 +1,4 @@
-//UC6 :Store the Daily Wage along with the Total Wage - Save in an Array the Daily Wage
+//UC7 : Array Helper Functions
 
 const IS_ABSENT = 0;
 const IS_FULL_TIME = 1;
@@ -14,10 +14,10 @@ function getWorkingHours(empCheck){
     switch (empCheck){
     case IS_ABSENT:
     return 0;
-        
+
     case IS_FULL_TIME:
     return FULL_TIME_HOURS;
-        
+
     case IS_PART_TIME:
     return PART_TIME_HOURS;
     }
@@ -28,7 +28,7 @@ let totalWorkingDays = 0;
 let empDailyWageArray = new Array();
 
 function calculateDailyWage(empHours){
-    return empHours * WAGE_PER_HOUR;
+return empHours * WAGE_PER_HOUR;
 }
 
 while (totalWorkingDays < MAX_DAYS_IN_MONTH && totalWorkingHours < MAX_HRS_IN_MONTH) {
@@ -40,3 +40,16 @@ while (totalWorkingDays < MAX_DAYS_IN_MONTH && totalWorkingHours < MAX_HRS_IN_MO
 }
 let empWage = calculateDailyWage(totalWorkingHours);
 console.log("Total Days: "+totalWorkingDays +" Total Hours: "+totalWorkingHours+ " Employee wage: "+ empWage);
+
+//UC7A - Calc total wage using Array forEach traversal or reduce method
+
+let totEmpWage=0;
+function sum(dailyWage){
+    totEmpWage+= dailyWage;
+}
+empDailyWageArray.forEach(sum);
+console.log("UC7A - Total days: "+totalWorkingDays+" Total Hrs: "+totalWorkingHours+" EMP Wage: "+totEmpWage);
+function totalWages(totalWage,dailyWage){
+    return totalWage + dailyWage;
+}
+console.log("UC7A - Emp wage with reduce: " +empDailyWageArray.reduce(totalWages,0));
