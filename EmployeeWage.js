@@ -55,6 +55,7 @@ function totalWages(totalWage,dailyWage){
 console.log("UC7A - Emp wage with reduce: " +empDailyWageArray.reduce(totalWages,0));
 
 // UC7B - Show the Day along with Daily Wage using Array map helper function
+
 let dailyCntr = 0;
 function mapDayWithWage(dailyWage){
     dailyCntr++;
@@ -63,3 +64,13 @@ function mapDayWithWage(dailyWage){
 let mapDayWithWagearray = empDailyWageArray.map(mapDayWithWage);
 console.log("UC7B - Daily Wage Map ");
 console.log(mapDayWithWagearray)
+
+// UC7C - Show Days when Full time wage of 160 were earned using filter function
+
+function fulltimeWage(dailyWage){
+    return dailyWage.includes("160");
+}
+let fullDayWageArray = mapDayWithWagearray.filter(fulltimeWage);
+console.log("UC7C - Daily Wage Filter When Fulltime Wage Earned ")
+console.log(fullDayWageArray)
+
