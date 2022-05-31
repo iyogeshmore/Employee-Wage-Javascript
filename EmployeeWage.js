@@ -73,4 +73,3 @@ function fulltimeWage(dailyWage){
 let fullDayWageArray = mapDayWithWagearray.filter(fulltimeWage);
 console.log("UC7C - Daily Wage Filter When Fulltime Wage Earned ")
 console.log(fullDayWageArray)
-
