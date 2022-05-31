@@ -14,10 +14,10 @@ function getWorkingHours(empCheck){
     switch (empCheck){
     case IS_ABSENT:
     return 0;
-
+        
     case IS_FULL_TIME:
     return FULL_TIME_HOURS;
-
+        
     case IS_PART_TIME:
     return PART_TIME_HOURS;
     }
